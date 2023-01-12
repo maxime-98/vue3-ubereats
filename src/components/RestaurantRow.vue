@@ -1,10 +1,12 @@
 <template>
-  <div class="Restaurant--Row">
+  <div class="restaurant--row">
     <h2 class="title">
         Nos restaurants
     </h2>
-    <restaurant-card/>
+    <div class="wrapper--card">
+        <restaurant-card v-for="(card ,index) in 3" :key="index"/>
     </div>
+</div>
 </template>
 
 <script>
@@ -18,6 +20,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    .restaurant--row {
+        .title {
+            font-size: 2rem;
+        }
+        .wrapper--card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
 
 </style>
