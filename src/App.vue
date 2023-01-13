@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <RestaurantRow/>
+  <div id="app">
+    <Home/>
   </div>
 </template>
 
 <script>
-import RestaurantRow from './components/RestaurantRow.vue'
+import Home from './page/home.vue'
 
 export default {
   name: 'App',
-  components: {
-    RestaurantRow
+  components : {
+    Home,
+  }
 
   }
-}
+
 </script>
 
 <style>
