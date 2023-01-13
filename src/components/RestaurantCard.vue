@@ -1,6 +1,6 @@
 <template>
   <div class="restaurant--card">
-    <div class="restaurant--image">
+    <div :style="changeBackground" class="restaurant--image">
 
     </div>
     <div class="restaurant--informations">
@@ -22,12 +22,28 @@
 </template>
 
 <script>
+// IMPORT
+import { computed } from '@vue/reactivity'
+
 export default {
     name:"RestaurantCard",
     props: {
         info_restaurant: Object
+    },
+    setup(props) {
+            const changeBackground = computed(() => {
+            return {
+                backgroundImage:`url(${props.info_restaurant.image})`
+                }
+            })
+
+            //console.log(changeBackground)
+            //RETURN
+            return {
+                changeBackground,
+            }
+        }
     }
-}
 </script>
 
 <style  lang="scss">
